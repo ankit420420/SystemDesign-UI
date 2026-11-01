@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="register-container">
+      <h2>User Registration</h2>
+
+      <div class="registration-mode">
+        <label>
+          <input type="radio" name="mode" value="single" checked />
+          Single User
+        </label>
+
+        <label>
+          <input type="radio" name="mode" value="multiple" />
+          Multiple Users
+        </label>
+
+        <label>
+          <input type="radio" name="mode" value="json" />
+          Upload JSON
+        </label>
+      </div>
+
+      <form id="registerForm">
+        <!-- Manual user entry -->
+        <div id="usersContainer"></div>
+
+        <button type="button" id="addUserBtn" hidden>+ Add Another User</button>
+
+        <!-- JSON upload -->
+        <div id="jsonUploadContainer" hidden>
+          <label for="jsonFile">Select JSON File:</label>
+
+          <input type="file" id="jsonFile" accept=".json,application/json" />
+
+          <p id="fileInfo"></p>
+        </div>
+
+        <button type="submit" id="registerBtn">Register User</button>
+      </form>
+
+      <p id="message" role="status"></p>
+
+      <p>
+        Already have an account?
+        <a href="./index.html">Login here</a>
+      </p>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/register.js"></script>
+  </body>
+</html>

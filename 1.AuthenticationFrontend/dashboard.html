@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body class="dashboard-page">
+    <header class="dashboard-header">
+      <div class="dashboard-brand">
+        <div class="brand-icon">A</div>
+        <div>
+          <h1>Authentication Dashboard</h1>
+          <p>Account Management</p>
+        </div>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn" type="button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"
+          />
+        </svg>
+        Logout
+      </button>
+    </header>
+
+    <main class="dashboard-main">
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+        <p class="breadcrumb">DASHBOARD / OVERVIEW</p>
+        <h2 id="welcomeMessage">Welcome!</h2>
+        <p>Manage your account and view user information.</p>
+      </section>
+
+      <!-- Account Summary -->
+      <section class="account-summary">
+        <div class="account-details">
+          <div class="avatar" id="profileAvatar">U</div>
+
+          <div>
+            <div class="account-name">
+              <strong id="summaryUsername">Loading...</strong>
+              <span id="summaryRole" class="role-badge" hidden></span>
+            </div>
+
+            <p id="summaryUserCode">Fetching profile...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Navigation -->
+      <nav class="dashboard-nav" aria-label="Dashboard sections">
+        <button id="viewProfileBtn" class="nav-btn active" type="button" aria-pressed="true">
+          My Profile
+        </button>
+
+        <button id="getUsersBtn" class="nav-btn" type="button" aria-pressed="false" hidden>
+          All Users
+        </button>
+      </nav>
+
+      <!-- Profile View -->
+      <section id="profileView" class="dashboard-panel">
+        <div class="panel-heading">
+          <h3>My Profile</h3>
+          <p>Your personal account details</p>
+        </div>
+
+        <div class="profile-table-wrapper">
+          <table class="profile-table">
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row">Username</th>
+                <td id="profileUsername">-</td>
+              </tr>
+              <tr>
+                <th scope="row">User Code</th>
+                <td id="profileUserCode">-</td>
+              </tr>
+              <tr>
+                <th scope="row">Role</th>
+                <td id="profileRole">-</td>
+              </tr>
+              <tr>
+                <th scope="row">Created At</th>
+                <td id="profileCreatedAt">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- All Users View -->
+      <section id="usersView" class="dashboard-panel" hidden>
+        <div class="panel-heading">
+          <h3>All Users</h3>
+          <p>Registered users in your application</p>
+        </div>
+
+        <p id="message" role="status"></p>
+
+        <div id="usersContainer" class="users-table-wrapper"></div>
+      </section>
+    </main>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/dashboard.js"></script>
+  </body>
+</html>
